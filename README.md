@@ -39,3 +39,15 @@ Figura 1 - Saída do programa SQL
 
 ![Solução SQL](questao_2/imagem_2.png)
 Figura 2 - Saída do programa Python
+
+##### Questão 3:
+
+Foi criado o script Python e SQL para realizar o calculo das conversas do chatbot com as regras apresentadas.
+
+As evidências com a saída solicitada segue abaixo.
+
+![Solução SQL](questao_3/imagem_1.png)
+Figura 1 - Saída do programa SQL
+
+![Solução SQL](questao_3/imagem_2.png)
+Figura 2 - Saída do programa Python
