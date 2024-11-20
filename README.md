@@ -28,10 +28,12 @@ A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferr
 
 **Iceberg**: Plataforma open-source que possui a maioria dos recursos do deltalake do databrikcs. No entanto, a responsabilidade pela atualização da plataforma, integração de recursos e gerenciamento de versões das dependências pode gerar um custo alto de sustentação, o que pode ser um desafio á longo prazo.
 
-Ferramenta de Dataviz:
+##### Ferramenta de Dataviz:
 
 <mark>**Power BI**: O consumo de dados diretamente de um Data Lake pode gerar custos elevados de processamento e deve ser evitado sempre que possível. É comum utilizar um banco de dados intermediário para essa finalidade, aplicando técnicas como cargas incrementais ou streams. A escolha do Power BI se justifica pelo recursos disponíveis, como mapas, gráficos e a responsividade mobile. Sua arquitetura em nuvem, que permite armazenar dados importados de fontes remotas, garante segurança e desempenho.</mark>
+
 **Metabase**: Ferramenta open-source que oferece recursos como criação de gráficos, dashboards e governança de dados. No entanto, enfrenta limitações em dispositivos móveis, o que pode impactar a experiência do usuário.
+
 **Superset**: Ferramenta open-source que também oferece recursos robustos, como criação de gráficos, dashboards e governança de dados. Assim como o Metabase, enfrenta desafios em dispositivos móveis, o que pode prejudicar a usabilidade
 
 # Questão 1
@@ -80,34 +82,37 @@ Proponha uma arquitetura que contemple cada um dos casos de uso: painel de notif
 
 # Resposta da Questão 1
 
+Resumo:
+
+A plataforma mencionada no enunciado descreve um sistema de PAS (Plataforma como Serviço), que fornece para os clientes de marketing como o envio de mansagens para seus leads. O painel é muito importante para o cliente conseguir fazer relatórios, valizações, investigações e calculos de custos. A Origem dos dados é um tópico Kafka que é desenhado para suportar filas de ingestão de dados, baixa latência e escalamento horrizontal de processamento.
+
+
 ##### Ingestão de Dados com Apache Kafka
 
-Podemos utilizar o Kafka para realizar a ingestão de dados em tempo real, permitindo processamento de alta escala e baixa latência.
+Devido ao volume de dados de milhões de mensagens por minuto, o tipo de armazenamento pelo Kafka precisa ser feito em um Bucket (Azure ou AWS) por motivo de latencia, custo e performance. É fundamental garantir que o Kafka seja configurado corretamente e particionado adequadamente para otimizar a performance de processamento dos dados.
+Além disso, a politica de backup do bucket precisa ser definida para garantir que os dados salvos estejam seguros e sejam movidos para outros discos de armazenamento com custo menor.
 
 ##### Processamento em Tempo Real com Databricks e Apache Spark
 
-O Databricks pode ser utilizado para processar os dados do Kafka utilizando o Databricks Structured Streaming que implementa os recursos do Apache Spark. Os dados ingeridos serão armazenados no Delta Lake, com janela de agregação de 1 minuto.
+O Databricks pode ser utilizado para processar os dados do Kafka utilizando o Databricks Structured Streaming que implementa os recursos do Apache Spark. É fundamental que se utilize os recursos de cache, indexação, otimização (como Liquid Clusters). Além de projetar corretamente as tabelas para otimizar os relacionamentos, e querys visando reduzir o custo computacional do processo.
 
 ##### Armazenamento e Consultas com Delta Lake
 
 O Delta Lake do Databkicks será implementado com uma arquitetura de camadas: Bronze, Prata e Ouro. Os dados ingeridos pelo Databricks serão carregado as-is diretamente na camada Bronze.
 As camadas seguintes, Prata e Ouro serão responsáveis por realizar o processamento, limpeza para criação do data Mart com as informações refinadas para os relatórios.
+A abordagem ELT (Extract, Load, Transform) será adotada para desacoplar os dados e garantir que as cópias originais sejam mantidas, o que, além de melhorar a governança, também reduz os custos e o tempo de processamento, simplificando a complexidade do processo de ingestão de dados.
 
 ##### Visualização e Relatórios
 
-A criação dos relatórios irá consumir as tabelas com os cálculos refinados dos relatórios detalhados de notificação e Cobrança, que poderá ser realizada por ferramentas como Power BI, Metabase, Superset entre outros.
+A criação dos relatórios irá consumir as tabelas com os cálculos refinados dos relatórios detalhados de notificação e Cobrança, que será realizada pelo Power BI, no entanto Metabase, Superset, Qlik Sense também poderia realizar.
+A escolha por utilizar o Power BI está no recurso de modelagem de conexão com serviços em nuvem, que permite otimizar os dados e armazená-los diretamente na nuvem do Power BI, eliminando a necessidade de um banco de dados para essa finalidade.
 
 ##### O resultado final o fluxo seguiria da seguinte forma
 
 ![Solução SQL](questao_1/imagem_1.png)
 Figura 1 - Fluxograma das ferramentas
 
-##### Informações importantes
-
-- O tópico do Kafka possui capacidade de suportar milhões de mensagens por dia;
-- Possui capacidade de escalabilidade horizontal para garantir a performance;
-- Os dados serão transmitidos pelas camadas em tempo real de maneira rápida e eficiente.
-- O Spark poderá ser utilizado para ser uma das ferramentas de análises exploratória e visualização dos dados.
+O resultado é um sistema enxuto, composto por ferramentas PaaS (Databricks e Power BI), que oferecem à equipe segurança e estabilidade no uso das plataformas. Os bancos de dados (buckets) são classificados como IaaS, garantindo alta disponibilidade e performance para a equipe. Um ponto de atenção importante é o orçamento do projeto. A estimativa de custos deve ser cuidadosamente avaliada para garantir que o projeto esteja alinhado com o orçamento disponível.
 
 # Questão 2:
  
