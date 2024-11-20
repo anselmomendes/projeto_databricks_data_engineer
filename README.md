@@ -30,9 +30,9 @@ A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferr
 
 Ferramenta de Dataviz:
 
-**Power BI**: 
-**Database**:
-**Superset**:
+<mark>**Power BI**: O consumo de dados diretamente de um Data Lake pode gerar custos elevados de processamento e deve ser evitado sempre que possível. É comum utilizar um banco de dados intermediário para essa finalidade, aplicando técnicas como cargas incrementais ou streams. A escolha do Power BI se justifica pelo recursos disponíveis, como mapas, gráficos e a responsividade mobile. Sua arquitetura em nuvem, que permite armazenar dados importados de fontes remotas, garante segurança e desempenho.</mark>
+**Metabase**: Ferramenta open-source que oferece recursos como criação de gráficos, dashboards e governança de dados. No entanto, enfrenta limitações em dispositivos móveis, o que pode impactar a experiência do usuário.
+**Superset**: Ferramenta open-source que também oferece recursos robustos, como criação de gráficos, dashboards e governança de dados. Assim como o Metabase, enfrenta desafios em dispositivos móveis, o que pode prejudicar a usabilidade
 
 # Questão 1
 
