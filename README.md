@@ -129,21 +129,31 @@ Resultado esperado:
 
 # Resposta da Questão 2
 
-Foi criado dois scripts (Python e SQL) para realizar o calculo das faturas retroativas com as regras de negocio apresentadas
+##### Resumo:
+
+Foi criado dois scripts (Python e SQL) para realizar o calculo das faturas retroativas com as regras de negocio apresentadas.
+
+A solução em python realiza o que foi solicitado, porém não oferece escalabilidade para operação, a transformação dos dados diretamente pode causar um custo alto de processamento dependendo do volume de dados, tem risco de desastres porque não tem armazenamento da transformação como em um banco de dados através dos recursos de ACID.
+
+![Solução Python](questao_2/imagem_2.png)
+Figura 3 - Saída do programa Python
+
+A segunda solução foi utilizado o banco de dados, onde os dados foram carregados full em uma tabela as-is e transformados utilizando subquery. Essa é um formato escalavel onde os dados podem ser salvos, gerenciados, documentados, protegidos e otimizados através da otimizações das tabelas em um ambiente de produção.
+
+Outro ponto importante é que realizar transformações em dados direto na linguagem é sensivel a versão da biblioteca e linguagem. Por outro lado, nas soluções baseadas em bancos de dados, as queries geralmente mantêm sua sintaxe estável, com menos necessidade de ajustes após atualizações de versão.
 
 ![Solução SQL](questao_2/imagem_1.png)
 Figura 2 - Saída do programa SQL
 
-![Solução SQL](questao_2/imagem_2.png)
-Figura 3 - Saída do programa Python
-
-Passo a passo da solução:
+##### Passo a passo da solução:
 
 - Filtrar os registros para para listar apenas os registros antes de 2020-01-01
 - Salvar os dados no banco de dados (para a solução SQL)
 - Contar quantos registros existem entre a data de referência, a data de referência - 3 meses, e a data de referência - 6 meses.
 - Atribuir nulo para as os registros que não atingirem a quantidade mínima e calcular a média para os dados com a quantidade minima.
 - Construir um novo dataframe para armazenar os dados com customer e account e médias.
+
+A saída da query foi é exatamente no formato da saida do relatório.
 
 # Questão 3:
 
@@ -192,7 +202,7 @@ Passo a passo da solução:
 As evidências com a saída solicitada segue abaixo.
 
 ![Solução SQL](questao_3/imagem_1.png)
-Figura 4 - Saída do programa SQL
+Figura 4 - Saída do programa para flow 1
 
 ![Solução SQL](questao_3/imagem_2.png)
-Figura 5 - Saída do programa Python
+Figura 5 - Saída do programa para flow 2
