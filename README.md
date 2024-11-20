@@ -4,6 +4,36 @@
 ##### Data: 14/11/2024
 ##### Desafio: Desenvolver Arquitetura de Dados
 
+# Introdução
+
+O foco principal deste desafio, tanto na parte teórica quanto prática, foi a utilização de soluções escaláveis, adotando processos que podem ser ampliados em ferramentas como bancos de dados, Python e SQL. O projeto foi desenvolvido com base no conceito de ELT (Extract, Load, Transform), ao invés do tradicional ETL (Extract, Transform, Load), visando uma ingestão de dados que favorece a modelagem por camadas, com menor custo computacional e maior eficiência em grandes volumes de dados. Essa abordagem também reduz a complexidade do processo.
+
+A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferramenta de ingestão), possibilitou a execução dos exercícios práticos em Python e SQL, utilizando o Spark no Databricks, o que otimiza o desempenho e garante a escalabilidade da solução. A utilização de streams de dados com Spark e Databricks é altamente vantajosa, permitindo processar volumes massivos de dados de maneira eficiente. O Kafka, por sua vez, é capaz de escalar verticalmente, permitindo a ingestão de milhões de registros conforme necessário. Além disso, o versionamento de dados no Databricks e o uso de cache proporcionam maior controle e desempenho nas operações, garantindo flexibilidade e agilidade no processo de análise de dados.
+
+##### Ferramenta de ingestão:
+
+<mark>**Kafka**: Foi selecionado devido ao seu desempenho com dados em stream, documentação, performance e escalabilidade</mark>.
+
+**Airbyte**: Trabalha bem com dados em stream e oferece diversos componentes para ingestão de dados, mas o Kafka é mais estável, performático e escalável para cenários de grandes volumes de dados.
+
+**Airflow**: Produto não foi nativamente projetado para trabalhar com streaming de dados.
+
+**Dagster**: Produto não foi nativamente projetado para trabalhar com streaming de dados. Além disso, por ser uma ferramenta open-source e com atualizações frequentes, pode exigir um esforço considerável para mantê-la.
+
+##### Ferramenta de Datalake
+
+<mark>**Databricks**: Foi selecionado devido a maturidade da ferramenta, documentação e performance. Os recursos de stream, custos, cache e integrações com recursos como DVC, Noteboks, MLflow e entre outros.</mark>
+
+**Snowflake**: É um ótimo plataforma de dados diversos recursos como: integração com diversas ferramentas, escala, Noteboks, cache, governança entre outros. No entanto O databricks é mais completo em relação a integração com produtos de cloud como Azure e AWS.
+
+**Iceberg**: Plataforma open-source que possui a maioria dos recursos do deltalake do databrikcs. No entanto, a responsabilidade pela atualização da plataforma, integração de recursos e gerenciamento de versões das dependências pode gerar um custo alto de sustentação, o que pode ser um desafio á longo prazo.
+
+Ferramenta de Dataviz:
+
+**Power BI**: 
+**Database**:
+**Superset**:
+
 # Questão 1
 
 Projete uma solução para uma plataforma de comunicação que computa a utilização de notificações Whatsapp de milhares de clientes a cada minuto.
