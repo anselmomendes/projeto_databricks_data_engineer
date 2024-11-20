@@ -12,32 +12,32 @@ Projete uma solução para uma plataforma de comunicação que computa a utiliza
 
 A interface gráfica é um painel simples, apresentando alguns dados conforme o exemplo abaixo:
 
-Painel de Notificações
-Cliente: Acme
-Notificações Whatsapp: 5000
-Última atualização: 2020-02-03T15:00:00+00:00
+Painel de Notificações  
+Cliente: Acme  
+Notificações Whatsapp: 5000  
+Última atualização: 2020-02-03T15:00:00+00:00  
 
 As notificações são processadas a cada minuto e podem ser exportadas em um relatório detalhado conforme exemplo abaixo:
 
-Relatório Detalhado de Notificações
-= Cliente: Acme =
-Mensagem ID: 5B81FF24A1
-Payload: “Olá XXXXX, seja muito bem-vindo! Precisa de alguma ajuda?”
-Data hora: 2020-02-03T14:00:01.001+00:00
-...
+Relatório Detalhado de Notificações  
+= Cliente: Acme =  
+Mensagem ID: 5B81FF24A1  
+Payload: “Olá XXXXX, seja muito bem-vindo! Precisa de alguma ajuda?”  
+Data hora: 2020-02-03T14:00:01.001+00:00  
+...  
 
-Mensagem ID: A61D178E73
-Payload: “Não identificamos a sua última mensagem. Por favor, entre em contato”
-Data hora: 2020-02-03T14:00:01.099+00:00
-...
+Mensagem ID: A61D178E73  
+Payload: “Não identificamos a sua última mensagem. Por favor, entre em contato”  
+Data hora: 2020-02-03T14:00:01.099+00:00  
+...  
 
 Além disso, a solução também deve possibilitar a geração de um relatório de cobrança uma vez por dia, conforme exemplo abaixo:
 
-Relatório de Cobrança
-Cliente: Acme
-Notificações Whatsapp: 25000
-Valor: R$ 1000,00
-Data: 2020-02-03
+Relatório de Cobrança  
+Cliente: Acme  
+Notificações Whatsapp: 25000  
+Valor: R$ 1000,00  
+Data: 2020-02-03  
 
 A origem dos dados é um tópico no Kafka, com um volume de 100 milhões de mensagens/dia, com o seguinte payload:
 
