@@ -1,0 +1,284 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\anselmo.oliveira\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="desafio-engenheiro-de-dados">Desafio Engenheiro de Dados </h1>
+<h5 id="autor-anselmo-oliveira">Autor: Anselmo Oliveira </h5>
+<h5 id="data-14112024">Data: 14/11/2024 </h5>
+<h5 id="desafio-desenvolver-arquitetura-de-dados">Desafio: Desenvolver Arquitetura de Dados </h5>
+<h1 id="introdução">Introdução </h1>
+<p>O foco principal deste desafio, tanto na parte teórica quanto prática, foi a utilização de soluções escaláveis, adotando processos que podem ser ampliados em ferramentas como bancos de dados, Python e SQL. O projeto foi desenvolvido com base no conceito de ELT (Extract, Load, Transform), ao invés do tradicional ETL (Extract, Transform, Load), visando uma ingestão de dados que favorece a modelagem por camadas, com menor custo computacional e maior eficiência em grandes volumes de dados. Essa abordagem também reduz a complexidade do processo.</p>
+<p>A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferramenta de ingestão), possibilitou a execução dos exercícios práticos em Python e SQL, utilizando o Spark no Databricks, o que otimiza o desempenho e garante a escalabilidade da solução. A utilização de streams de dados com Spark e Databricks é altamente vantajosa, permitindo processar volumes massivos de dados de maneira eficiente.</p>
+<p>O Kafka, por sua vez, é capaz de escalar verticalmente, permitindo a ingestão de milhões de registros conforme necessário. Além disso, o versionamento de dados no Databricks e o uso de cache proporcionam maior controle e desempenho nas operações, garantindo flexibilidade e agilidade no processo de análise de dados.</p>
+<h5 id="ferramenta-de-ingestão">Ferramenta de ingestão: </h5>
+<p><mark><strong>Kafka</strong>: Foi selecionado devido ao seu desempenho com dados em stream, documentação, performance e escalabilidade</mark>.</p>
+<p><strong>Airbyte</strong>: Trabalha bem com dados em stream e oferece diversos componentes para ingestão de dados, mas o Kafka é mais estável, performático e escalável para cenários de grandes volumes de dados.</p>
+<p><strong>Airflow</strong>: Produto não foi nativamente projetado para trabalhar com streaming de dados.</p>
+<p><strong>Dagster</strong>: Produto não foi nativamente projetado para trabalhar com streaming de dados. Além disso, por ser uma ferramenta open-source e com atualizações frequentes, pode exigir um esforço considerável para mantê-la.</p>
+<h5 id="ferramenta-de-datalake">Ferramenta de Datalake </h5>
+<p><mark><strong>Databricks</strong>: Foi selecionado devido a maturidade da ferramenta, documentação e performance. Os recursos de stream, custos, cache e integrações com recursos como DVC, Noteboks, MLflow e entre outros.</mark></p>
+<p><strong>Snowflake</strong>: É um ótimo plataforma de dados diversos recursos como: integração com diversas ferramentas, escala, Noteboks, cache, governança entre outros. No entanto O databricks é mais completo em relação a integração com produtos de cloud como Azure e AWS.</p>
+<p><strong>Iceberg</strong>: Plataforma open-source que possui a maioria dos recursos do deltalake do databrikcs. No entanto, a responsabilidade pela atualização da plataforma, integração de recursos e gerenciamento de versões das dependências pode gerar um custo alto de sustentação, o que pode ser um desafio á longo prazo.</p>
+<h5 id="ferramenta-de-dataviz">Ferramenta de Dataviz: </h5>
+<p><mark><strong>Power BI</strong>: O consumo de dados diretamente de um Data Lake pode gerar custos elevados de processamento e deve ser evitado sempre que possível. É comum utilizar um banco de dados intermediário para essa finalidade, aplicando técnicas como cargas incrementais ou streams. A escolha do Power BI se justifica pelo recursos disponíveis, como mapas, gráficos e a responsividade mobile. Sua arquitetura em nuvem, que permite armazenar dados importados de fontes remotas, garante segurança e desempenho.</mark></p>
+<p><strong>Metabase</strong>: Ferramenta open-source que oferece recursos como criação de gráficos, dashboards e governança de dados. No entanto, enfrenta limitações em dispositivos móveis, o que pode impactar a experiência do usuário.</p>
+<p><strong>Superset</strong>: Ferramenta open-source que também oferece recursos robustos, como criação de gráficos, dashboards e governança de dados. Assim como o Metabase, enfrenta desafios em dispositivos móveis, o que pode prejudicar a usabilidade.</p>
+<h1 id="questão-1">Questão 1 </h1>
+<p>Projete uma solução para uma plataforma de comunicação que computa a utilização de notificações Whatsapp de milhares de clientes a cada minuto.</p>
+<p>Projete uma solução para uma plataforma de comunicação que computa a utilização de notificações Whatsapp de milhares de clientes a cada minuto.</p>
+<p>A interface gráfica é um painel simples, apresentando alguns dados conforme o exemplo abaixo:</p>
+<p>Painel de Notificações<br>
+<code>Cliente: Acme  </code><br>
+<code>Notificações Whatsapp: 5000 </code><br>
+<code>Última atualização: 2020-02-03T15:00:00+00:00  </code></p>
+<p>As notificações são processadas a cada minuto e podem ser exportadas em um relatório detalhado conforme exemplo abaixo:</p>
+<p>Relatório Detalhado de Notificações<br>
+<code>= Cliente: Acme =  </code><br>
+<code>Mensagem ID: 5B81FF24A1  </code><br>
+<code>Payload: “Olá XXXXX, seja muito bem-vindo! Precisa de alguma ajuda?”</code><br>
+<code>Data hora: 2020-02-03T14:00:01.001+00:00  </code><br>
+...</p>
+<p><code>Mensagem ID: A61D178E73  </code><br>
+<code>Payload: “Não identificamos a sua última mensagem. Por favor, entre em contato”  </code><br>
+<code>Data hora: 2020-02-03T14:00:01.099+00:00  </code><br>
+...</p>
+<p>Além disso, a solução também deve possibilitar a geração de um relatório de cobrança uma vez por dia, conforme exemplo abaixo:</p>
+<p>Relatório de Cobrança<br>
+<code>Cliente: Acme  </code><br>
+<code>Notificações Whatsapp: 25000  </code><br>
+<code>Valor: R$ 1000,00  </code><br>
+<code>Data: 2020-02-03  </code></p>
+<p>A origem dos dados é um tópico no Kafka, com um volume de 100 milhões de mensagens/dia, com o seguinte payload:</p>
+<table>
+<thead>
+<tr>
+<th>customer_id</th>
+<th>message_id</th>
+<th>customer_name</th>
+<th>channel</th>
+<th>payload</th>
+<th>event_datetime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7494212</td>
+<td>5B81FF24A1</td>
+<td>Acme</td>
+<td>Whatsapp</td>
+<td>Olá XXXXX, seja muito bem-vindo! Precis...</td>
+<td>2020-02-03T14:00:01.001+00:00</td>
+</tr>
+<tr>
+<td>7494212</td>
+<td>A61D178E73</td>
+<td>Acme</td>
+<td>Whatsapp</td>
+<td>Não identificamos a sua última mensagem...</td>
+<td>2020-02-03T14:00:01.099+00:00</td>
+</tr>
+</tbody>
+</table>
+<p>Proponha uma arquitetura que contemple cada um dos casos de uso: painel de notificação, relatório detalhado de notificações e relatório de cobrança.</p>
+<h1 id="resposta-da-questão-1">Resposta da Questão 1 </h1>
+<p>Resumo:</p>
+<p>A plataforma mencionada no enunciado descreve um sistema de PAS (Plataforma como Serviço), que fornece para os clientes de marketing como o envio de nansagens para seus leads. O painel é muito importante para o cliente conseguir fazer relatórios, valizações, investigações e calculos de custos. A Origem dos dados é um tópico Kafka que é desenhado para suportar filas de ingestão de dados, baixa latência e escalamento horizontal de processamento.</p>
+<h5 id="ingestão-de-dados-com-apache-kafka">Ingestão de Dados com Apache Kafka </h5>
+<p>Devido ao volume de dados de milhões de mensagens por minuto, o tipo de armazenamento pelo Kafka precisa ser feito em um Bucket (Azure ou AWS) por motivo de latencia, custo e performance. É fundamental garantir que o Kafka seja configurado corretamente e particionado adequadamente para otimizar a performance de processamento dos dados.<br>
+Além disso, a política de backup do bucket precisa ser definida para garantir que os dados salvos estejam seguros e sejam movidos para outros discos de armazenamento com custo menor.</p>
+<h5 id="processamento-em-tempo-real-com-databricks-e-apache-spark">Processamento em Tempo Real com Databricks e Apache Spark </h5>
+<p>O Databricks pode ser utilizado para processar os dados do Kafka utilizando o Databricks Structured Streaming que implementa os recursos do Apache Spark. É fundamental que se utilize os recursos de cache, indexação, otimização (como Liquid Clusters). Além de projetar corretamente as tabelas para otimizar os relacionamentos, e queries visando reduzir o custo computacional do processo.</p>
+<h5 id="armazenamento-e-consultas-com-delta-lake">Armazenamento e Consultas com Delta Lake </h5>
+<p>O Delta Lake do Databkicks será implementado com uma arquitetura de camadas: Bronze, Prata e Ouro. Os dados ingeridos pelo Databricks serão carregado as-is diretamente na camada Bronze.<br>
+As camadas seguintes, Prata e Ouro serão responsáveis por realizar o processamento, limpeza para criação do data mart com as informações refinadas para os relatórios.</p>
+<p>A abordagem ELT (Extract, Load, Transform) será adotada para desacoplar os dados e garantir que as cópias originais sejam mantidas, o que, além de melhorar a governança, também reduz os custos e o tempo de processamento, simplificando a complexidade do processo de ingestão de dados.</p>
+<h5 id="visualização-e-relatórios">Visualização e Relatórios </h5>
+<p>A criação dos relatórios irá consumir as tabelas com os cálculos refinados dos relatórios detalhados de notificação e Cobrança, que será realizada pelo Power BI, no entanto, Metabase, Superset, Qlik Sense também poderia realizar.</p>
+<p>A escolha por utilizar o Power BI está no recurso de modelagem de conexão com serviços em nuvem, que permite otimizar os dados e armazená-los diretamente na nuvem do Power BI, eliminando a necessidade de um banco de dados para essa finalidade.</p>
+<h5 id="o-resultado-final-o-fluxo-seguiria-da-seguinte-forma">O resultado final o fluxo seguiria da seguinte forma </h5>
+<p><img src="questao_1/imagem_1.png" alt="Solução SQL"><br>
+Figura 1 - Fluxograma das ferramentas</p>
+<p>O resultado é um sistema enxuto, composto por ferramentas PaaS (Databricks e Power BI), que oferecem à equipe segurança e estabilidade no uso das plataformas. Os bancos de dados (buckets) são classificados como IaaS, garantindo alta disponibilidade e performance para a equipe. Um ponto de atenção importante é o orçamento do projeto. A estimativa de custos deve ser cuidadosamente avaliada para garantir que o projeto esteja alinhado com o orçamento disponível.</p>
+<h1 id="questão-2">Questão 2: </h1>
+<p>Com base no arquivo invoices.csv, escreva um serviço que computa a média de faturamento de cada conta (account) nos últimos três e seis meses retroativos à Jan/2020. Quando não há dados suficientes na janela de 3 ou 6 meses o serviço registra a entrada como null.</p>
+<p>Resultado esperado:</p>
+<table>
+<thead>
+<tr>
+<th>customer</th>
+<th>account</th>
+<th>avg_invoices_last_3_months</th>
+<th>avg_invoices_last_6_months</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1000</td>
+<td>A1100</td>
+<td>56.333,33</td>
+<td>41.416,66</td>
+</tr>
+<tr>
+<td>C1000</td>
+<td>A1200</td>
+<td>50.666,66</td>
+<td>null</td>
+</tr>
+<tr>
+<td>C1000</td>
+<td>A1300</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>C2000</td>
+<td>A2100</td>
+<td>55.400,00</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h1 id="resposta-da-questão-2">Resposta da Questão 2 </h1>
+<h5 id="resumo">Resumo: </h5>
+<p>Foram criados dois scripts (Python e SQL) para realizar o calculo das faturas retroativas com as regras de negocios apresentadas.</p>
+<p>A solução em python realiza o que foi solicitado, porém não oferece escalabilidade para operação, a transformação dos dados diretamente pode causar um custo alto de processamento dependendo do volume de dados, tem risco de desastres porque não tem armazenamento da transformação como em um banco de dados através dos recursos de ACID.</p>
+<p><img src="questao_2/imagem_2.png" alt="Solução Python"><br>
+Figura 3 - Saída do programa Python</p>
+<p>A segunda solução foi utilizada o banco de dados, onde os dados foram carregados full em uma tabela as-is e transformados utilizando subquery. Esse é um formato escalavel onde os dados podem ser salvos, gerenciados, documentados e protegidos e otimizados em um ambiente de produção.</p>
+<p>Outro ponto importante é que realizar transformações em dados direto na linguagem é sensível a versão da biblioteca e linguagem. Por outro lado, nas soluções baseadas em bancos de dados, as queries geralmente mantêm sua sintaxe estável, com menos necessidade de ajustes após atualizações de versão.</p>
+<p><img src="questao_2/imagem_1.png" alt="Solução SQL"><br>
+Figura 2 - Saída do programa SQL</p>
+<h5 id="passo-a-passo-da-solução">Passo a passo da solução: </h5>
+<ul>
+<li>Filtrar os registros para listar apenas os registros antes de 2020-01-01</li>
+<li>Salvar os dados no banco de dados (para a solução SQL)</li>
+<li>Contar quantos registros existem entre a data de referência, a data de referência - 3 meses, e a data de referência - 6 meses.</li>
+<li>Atribuir nulo para os registros que não atingirem a quantidade mínima e calcular a média para os dados com a quantidade minima.</li>
+<li>Construir um novo dataframe para armazenar os dados com customer e account e médias.</li>
+</ul>
+<p>A saída da query obteve o resultado esperado.</p>
+<h1 id="questão-3">Questão 3: </h1>
+<p>Uma plataforma de comunicação fornece fluxos de conversação (chatbots) entre outras funcionalidades. O data lake desta plataforma armazena valores informados pelos usuários em um formato semiestruturado (JSON) particionado por hora:</p>
+<p>●	hour=13.json<br>
+●	hour=14.json</p>
+<p>Considere que a seção content mantém as respostas de usuários. Ou seja, os valores preenchidos pelos usuários durante uma conversa. Para isto, ela armazena mapas onde a chave e valor são do tipo String.</p>
+<p>Implemente um serviço que gera um relatório consolidado das últimas respostas informadas pelos usuários na hora 13 e hora 14 no seguinte formato:</p>
+<table>
+<thead>
+<tr>
+<th>customer</th>
+<th>flow</th>
+<th>session</th>
+<th>first_answer_dt</th>
+<th>last_answer_dt</th>
+<th>name</th>
+<th>cpf</th>
+<th>delivery_confirmed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1000</td>
+<td>F1000</td>
+<td>S1000</td>
+<td>2019-12-16T13:59:58</td>
+<td>2019-12-16T14:00:01</td>
+<td>maria</td>
+<td>305.584.960-40</td>
+<td>true</td>
+</tr>
+<tr>
+<td>C1000</td>
+<td>F1000</td>
+<td>S2000</td>
+<td>2019-12-16T13:59:59</td>
+<td>2019-12-16T14:00:00</td>
+<td>joao</td>
+<td>733.600.420-26</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Os campos first_answer_dt e last_answer_dt representam, respectivamente, a primeira e última interações válidas (diferente de vazio). No exemplo acima, os campos name, cpf e delivery_confirmed são as respostas do usuário.</p>
+<p>Para concluir, o serviço deve ser agnóstico de conversa, ou seja, deve suportar conteúdo de qualquer fluxo. Exemplo:</p>
+<table>
+<thead>
+<tr>
+<th>customer</th>
+<th>flow</th>
+<th>session</th>
+<th>first_answer_dt</th>
+<th>last_answer_dt</th>
+<th>recomenda</th>
+<th>nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C2000</td>
+<td>F2000</td>
+<td>S3000</td>
+<td>2019-12-16T13:59:59</td>
+<td>2019-12-16T14:00:01</td>
+<td>Simmmmmmm</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>Neste exemplo, recomenda e nota são as respostas do usuário.</p>
+<h1 id="resposta-da-questão-3">Resposta da Questão 3 </h1>
+<p>Como discutido no desafio anterior, a solução com persistência em banco de dados está mais alinhada às arquiteturas modernas de dados. Por isso, essa abordagem foi adotada na implementação.</p>
+<p>Os dados recebidos se tratavam de dados semi-estruturados, que significa que seja em alguns casos, mais difícil armazenar em tabelas. Quando trabalhamos com dados semi-estruturados com cardinalidade de N-1 ou N-N, a melhor solução é a criação da modelagem de banco de dados, aplicando relacionamento nas tabelas.</p>
+<p>Neste caso, os arquivos JSON possuíam cardinalidade 1-1, portanto, foram armazenados em uma tabela plana. É importante destacar que, nesse exemplo, cada fluxo (flow) terá as mesmas perguntas e os mesmos atributos, sendo assim os relatórios podem ser gerados respeitando registros do mesmo flow.</p>
+<p>Passo a passo da solução:</p>
+<ul>
+<li>Fazer a leitura dos dados e fazer a ingesão no banco de dados.</li>
+<li>Utilizar a "ROW_NUMBER" para selecionar a ultima mensagem valída do do customer, flow e session.</li>
+<li>Remover os resultados nulos e strings vazias.</li>
+<li>Fazer uma subquery para selecionar a data de ínicio e fim da conversa para os mesmos customer, flow e session.</li>
+<li>Concatenar e ter a tabela final no formato desejado.</li>
+<li>Processar cada flow individualmente, pois cada um possui uma estrutura de tabela diferente.</li>
+<li>Acessar cada combinação possível de customer, flow, e session para obter todas as conversas.</li>
+<li>Efetuar a leitura das colunas customer, flow e session, first_answer_dt e last_answer_dt que serão iguais devido ao filtro por conversa, obtendo apenas a primeira linha.</li>
+<li>Transpor os registros de key e value, ordenados pela data de envio.</li>
+<li>Concatenar os dados e compor a tabela de saída como apresentada no desafio.</li>
+</ul>
+<p><img src="questao_3/imagem_1.png" alt="Solução SQL"><br>
+Figura 4 - Saída do programa para flow 1</p>
+<p><img src="questao_3/imagem_2.png" alt="Solução SQL"><br>
+Figura 5 - Saída do programa para flow 2</p>
+<p>A saída do relatório conforme a resposta apresentada.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
