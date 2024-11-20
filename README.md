@@ -8,7 +8,9 @@
 
 O foco principal deste desafio, tanto na parte teórica quanto prática, foi a utilização de soluções escaláveis, adotando processos que podem ser ampliados em ferramentas como bancos de dados, Python e SQL. O projeto foi desenvolvido com base no conceito de ELT (Extract, Load, Transform), ao invés do tradicional ETL (Extract, Transform, Load), visando uma ingestão de dados que favorece a modelagem por camadas, com menor custo computacional e maior eficiência em grandes volumes de dados. Essa abordagem também reduz a complexidade do processo.
 
-A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferramenta de ingestão), possibilitou a execução dos exercícios práticos em Python e SQL, utilizando o Spark no Databricks, o que otimiza o desempenho e garante a escalabilidade da solução. A utilização de streams de dados com Spark e Databricks é altamente vantajosa, permitindo processar volumes massivos de dados de maneira eficiente. O Kafka, por sua vez, é capaz de escalar verticalmente, permitindo a ingestão de milhões de registros conforme necessário. Além disso, o versionamento de dados no Databricks e o uso de cache proporcionam maior controle e desempenho nas operações, garantindo flexibilidade e agilidade no processo de análise de dados.
+A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferramenta de ingestão), possibilitou a execução dos exercícios práticos em Python e SQL, utilizando o Spark no Databricks, o que otimiza o desempenho e garante a escalabilidade da solução. A utilização de streams de dados com Spark e Databricks é altamente vantajosa, permitindo processar volumes massivos de dados de maneira eficiente. 
+
+O Kafka, por sua vez, é capaz de escalar verticalmente, permitindo a ingestão de milhões de registros conforme necessário. Além disso, o versionamento de dados no Databricks e o uso de cache proporcionam maior controle e desempenho nas operações, garantindo flexibilidade e agilidade no processo de análise de dados.
 
 ##### Ferramenta de ingestão:
 
@@ -34,7 +36,7 @@ A escolha das ferramentas, como Databricks (para o Data Lake) e Kafka (como ferr
 
 **Metabase**: Ferramenta open-source que oferece recursos como criação de gráficos, dashboards e governança de dados. No entanto, enfrenta limitações em dispositivos móveis, o que pode impactar a experiência do usuário.
 
-**Superset**: Ferramenta open-source que também oferece recursos robustos, como criação de gráficos, dashboards e governança de dados. Assim como o Metabase, enfrenta desafios em dispositivos móveis, o que pode prejudicar a usabilidade
+**Superset**: Ferramenta open-source que também oferece recursos robustos, como criação de gráficos, dashboards e governança de dados. Assim como o Metabase, enfrenta desafios em dispositivos móveis, o que pode prejudicar a usabilidade.
 
 # Questão 1
 
@@ -45,31 +47,31 @@ Projete uma solução para uma plataforma de comunicação que computa a utiliza
 A interface gráfica é um painel simples, apresentando alguns dados conforme o exemplo abaixo:
 
 Painel de Notificações  
-Cliente: Acme  
-Notificações Whatsapp: 5000  
-Última atualização: 2020-02-03T15:00:00+00:00  
+`Cliente: Acme  `
+`Notificações Whatsapp: 5000 ` 
+`Última atualização: 2020-02-03T15:00:00+00:00  `
 
 As notificações são processadas a cada minuto e podem ser exportadas em um relatório detalhado conforme exemplo abaixo:
 
 Relatório Detalhado de Notificações  
-= Cliente: Acme =  
-Mensagem ID: 5B81FF24A1  
-Payload: “Olá XXXXX, seja muito bem-vindo! Precisa de alguma ajuda?”  
-Data hora: 2020-02-03T14:00:01.001+00:00  
+`= Cliente: Acme =  `
+`Mensagem ID: 5B81FF24A1  `
+`Payload: “Olá XXXXX, seja muito bem-vindo! Precisa de alguma ajuda?”`  
+`Data hora: 2020-02-03T14:00:01.001+00:00  `
 ...  
 
-Mensagem ID: A61D178E73  
-Payload: “Não identificamos a sua última mensagem. Por favor, entre em contato”  
-Data hora: 2020-02-03T14:00:01.099+00:00  
+`Mensagem ID: A61D178E73  `
+`Payload: “Não identificamos a sua última mensagem. Por favor, entre em contato”  `
+`Data hora: 2020-02-03T14:00:01.099+00:00  `
 ...  
 
 Além disso, a solução também deve possibilitar a geração de um relatório de cobrança uma vez por dia, conforme exemplo abaixo:
 
 Relatório de Cobrança  
-Cliente: Acme  
-Notificações Whatsapp: 25000  
-Valor: R$ 1000,00  
-Data: 2020-02-03  
+`Cliente: Acme  `
+`Notificações Whatsapp: 25000  `
+`Valor: R$ 1000,00  `
+`Data: 2020-02-03  `
 
 A origem dos dados é um tópico no Kafka, com um volume de 100 milhões de mensagens/dia, com o seguinte payload:
 
@@ -100,11 +102,13 @@ O Databricks pode ser utilizado para processar os dados do Kafka utilizando o Da
 
 O Delta Lake do Databkicks será implementado com uma arquitetura de camadas: Bronze, Prata e Ouro. Os dados ingeridos pelo Databricks serão carregado as-is diretamente na camada Bronze.
 As camadas seguintes, Prata e Ouro serão responsáveis por realizar o processamento, limpeza para criação do data mart com as informações refinadas para os relatórios.
+
 A abordagem ELT (Extract, Load, Transform) será adotada para desacoplar os dados e garantir que as cópias originais sejam mantidas, o que, além de melhorar a governança, também reduz os custos e o tempo de processamento, simplificando a complexidade do processo de ingestão de dados.
 
 ##### Visualização e Relatórios
 
 A criação dos relatórios irá consumir as tabelas com os cálculos refinados dos relatórios detalhados de notificação e Cobrança, que será realizada pelo Power BI, no entanto, Metabase, Superset, Qlik Sense também poderia realizar.
+
 A escolha por utilizar o Power BI está no recurso de modelagem de conexão com serviços em nuvem, que permite otimizar os dados e armazená-los diretamente na nuvem do Power BI, eliminando a necessidade de um banco de dados para essa finalidade.
 
 ##### O resultado final o fluxo seguiria da seguinte forma
