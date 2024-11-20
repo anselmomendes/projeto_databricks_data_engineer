@@ -84,27 +84,27 @@ Proponha uma arquitetura que contemple cada um dos casos de uso: painel de notif
 
 Resumo:
 
-A plataforma mencionada no enunciado descreve um sistema de PAS (Plataforma como Serviço), que fornece para os clientes de marketing como o envio de mansagens para seus leads. O painel é muito importante para o cliente conseguir fazer relatórios, valizações, investigações e calculos de custos. A Origem dos dados é um tópico Kafka que é desenhado para suportar filas de ingestão de dados, baixa latência e escalamento horrizontal de processamento.
+A plataforma mencionada no enunciado descreve um sistema de PAS (Plataforma como Serviço), que fornece para os clientes de marketing como o envio de nansagens para seus leads. O painel é muito importante para o cliente conseguir fazer relatórios, valizações, investigações e calculos de custos. A Origem dos dados é um tópico Kafka que é desenhado para suportar filas de ingestão de dados, baixa latência e escalamento horizontal de processamento.
 
 
 ##### Ingestão de Dados com Apache Kafka
 
 Devido ao volume de dados de milhões de mensagens por minuto, o tipo de armazenamento pelo Kafka precisa ser feito em um Bucket (Azure ou AWS) por motivo de latencia, custo e performance. É fundamental garantir que o Kafka seja configurado corretamente e particionado adequadamente para otimizar a performance de processamento dos dados.
-Além disso, a politica de backup do bucket precisa ser definida para garantir que os dados salvos estejam seguros e sejam movidos para outros discos de armazenamento com custo menor.
+Além disso, a política de backup do bucket precisa ser definida para garantir que os dados salvos estejam seguros e sejam movidos para outros discos de armazenamento com custo menor.
 
 ##### Processamento em Tempo Real com Databricks e Apache Spark
 
-O Databricks pode ser utilizado para processar os dados do Kafka utilizando o Databricks Structured Streaming que implementa os recursos do Apache Spark. É fundamental que se utilize os recursos de cache, indexação, otimização (como Liquid Clusters). Além de projetar corretamente as tabelas para otimizar os relacionamentos, e querys visando reduzir o custo computacional do processo.
+O Databricks pode ser utilizado para processar os dados do Kafka utilizando o Databricks Structured Streaming que implementa os recursos do Apache Spark. É fundamental que se utilize os recursos de cache, indexação, otimização (como Liquid Clusters). Além de projetar corretamente as tabelas para otimizar os relacionamentos, e queries visando reduzir o custo computacional do processo.
 
 ##### Armazenamento e Consultas com Delta Lake
 
 O Delta Lake do Databkicks será implementado com uma arquitetura de camadas: Bronze, Prata e Ouro. Os dados ingeridos pelo Databricks serão carregado as-is diretamente na camada Bronze.
-As camadas seguintes, Prata e Ouro serão responsáveis por realizar o processamento, limpeza para criação do data Mart com as informações refinadas para os relatórios.
+As camadas seguintes, Prata e Ouro serão responsáveis por realizar o processamento, limpeza para criação do data mart com as informações refinadas para os relatórios.
 A abordagem ELT (Extract, Load, Transform) será adotada para desacoplar os dados e garantir que as cópias originais sejam mantidas, o que, além de melhorar a governança, também reduz os custos e o tempo de processamento, simplificando a complexidade do processo de ingestão de dados.
 
 ##### Visualização e Relatórios
 
-A criação dos relatórios irá consumir as tabelas com os cálculos refinados dos relatórios detalhados de notificação e Cobrança, que será realizada pelo Power BI, no entanto Metabase, Superset, Qlik Sense também poderia realizar.
+A criação dos relatórios irá consumir as tabelas com os cálculos refinados dos relatórios detalhados de notificação e Cobrança, que será realizada pelo Power BI, no entanto, Metabase, Superset, Qlik Sense também poderia realizar.
 A escolha por utilizar o Power BI está no recurso de modelagem de conexão com serviços em nuvem, que permite otimizar os dados e armazená-los diretamente na nuvem do Power BI, eliminando a necessidade de um banco de dados para essa finalidade.
 
 ##### O resultado final o fluxo seguiria da seguinte forma
@@ -131,29 +131,29 @@ Resultado esperado:
 
 ##### Resumo:
 
-Foi criado dois scripts (Python e SQL) para realizar o calculo das faturas retroativas com as regras de negocio apresentadas.
+Foram criados dois scripts (Python e SQL) para realizar o calculo das faturas retroativas com as regras de negocios apresentadas.
 
 A solução em python realiza o que foi solicitado, porém não oferece escalabilidade para operação, a transformação dos dados diretamente pode causar um custo alto de processamento dependendo do volume de dados, tem risco de desastres porque não tem armazenamento da transformação como em um banco de dados através dos recursos de ACID.
 
 ![Solução Python](questao_2/imagem_2.png)
 Figura 3 - Saída do programa Python
 
-A segunda solução foi utilizado o banco de dados, onde os dados foram carregados full em uma tabela as-is e transformados utilizando subquery. Essa é um formato escalavel onde os dados podem ser salvos, gerenciados, documentados, protegidos e otimizados através da otimizações das tabelas em um ambiente de produção.
+A segunda solução foi utilizada o banco de dados, onde os dados foram carregados full em uma tabela as-is e transformados utilizando subquery. Esse é um formato escalavel onde os dados podem ser salvos, gerenciados, documentados e protegidos e otimizados em um ambiente de produção.
 
-Outro ponto importante é que realizar transformações em dados direto na linguagem é sensivel a versão da biblioteca e linguagem. Por outro lado, nas soluções baseadas em bancos de dados, as queries geralmente mantêm sua sintaxe estável, com menos necessidade de ajustes após atualizações de versão.
+Outro ponto importante é que realizar transformações em dados direto na linguagem é sensível a versão da biblioteca e linguagem. Por outro lado, nas soluções baseadas em bancos de dados, as queries geralmente mantêm sua sintaxe estável, com menos necessidade de ajustes após atualizações de versão.
 
 ![Solução SQL](questao_2/imagem_1.png)
 Figura 2 - Saída do programa SQL
 
 ##### Passo a passo da solução:
 
-- Filtrar os registros para para listar apenas os registros antes de 2020-01-01
+- Filtrar os registros para listar apenas os registros antes de 2020-01-01
 - Salvar os dados no banco de dados (para a solução SQL)
 - Contar quantos registros existem entre a data de referência, a data de referência - 3 meses, e a data de referência - 6 meses.
-- Atribuir nulo para as os registros que não atingirem a quantidade mínima e calcular a média para os dados com a quantidade minima.
+- Atribuir nulo para os registros que não atingirem a quantidade mínima e calcular a média para os dados com a quantidade minima.
 - Construir um novo dataframe para armazenar os dados com customer e account e médias.
 
-A saída da query foi é exatamente no formato da saida do relatório.
+A saída da query obteve o resultado esperado.
 
 # Questão 3:
 
@@ -184,25 +184,29 @@ Neste exemplo, recomenda e nota são as respostas do usuário.
 
 # Resposta da Questão 3
 
-Foi criado o script Python e SQL para realizar o calculo das conversas do chatbot com as regras apresentadas.
+Como discutido no desafio anterior, a solução com persistência em banco de dados está mais alinhada às arquiteturas modernas de dados. Por isso, essa abordagem foi adotada na implementação.
+
+Os dados recebidos se tratavam de dados semi-estruturados, que significa que seja em alguns casos, mais difícil armazenar em tabelas. Quando trabalhamos com dados semi-estruturados com cardinalidade de N-1 ou N-N, a melhor solução é a criação da modelagem de banco de dados, aplicando relacionamento nas tabelas.
+
+Neste caso, os arquivos JSON possuíam cardinalidade 1-1, portanto, foram armazenados em uma tabela plana. É importante destacar que, nesse exemplo, cada fluxo (flow) terá as mesmas perguntas e os mesmos atributos, sendo assim os relatórios podem ser gerados respeitando registros do mesmo flow.
 
 Passo a passo da solução:
 
 - Fazer a leitura dos dados e fazer a ingesão no banco de dados.
-- utilizar a "ROW_NUMBER" para selecionar a ultima mensagem valída do do customer, flow e session.
-- Remover os resultros nulos e strings vazias.
-- Fazer uma subquery para selecionar a data de incio e fim da conversa para os mesmos customer, flow e session.
+- Utilizar a "ROW_NUMBER" para selecionar a ultima mensagem valída do do customer, flow e session.
+- Remover os resultados nulos e strings vazias.
+- Fazer uma subquery para selecionar a data de ínicio e fim da conversa para os mesmos customer, flow e session.
 - Concatenar e ter a tabela final no formato desejado.
 - Processar cada flow individualmente, pois cada um possui uma estrutura de tabela diferente.
 - Acessar cada combinação possível de customer, flow, e session para obter todas as conversas.
 - Efetuar a leitura das colunas customer, flow e session, first_answer_dt e last_answer_dt que serão iguais devido ao filtro por conversa, obtendo apenas a primeira linha.
 - Transpor os registros de key e value, ordenados pela data de envio.
-- Concatenar os dados e compor a tabela de saida como apresentada no desafio.
-
-As evidências com a saída solicitada segue abaixo.
+- Concatenar os dados e compor a tabela de saída como apresentada no desafio.
 
 ![Solução SQL](questao_3/imagem_1.png)
 Figura 4 - Saída do programa para flow 1
 
 ![Solução SQL](questao_3/imagem_2.png)
 Figura 5 - Saída do programa para flow 2
+
+A saída do relatório conforme a resposta apresentada.
